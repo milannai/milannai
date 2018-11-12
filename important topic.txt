@@ -213,4 +213,3 @@ function custom_woocommerce_product_subcategories_args( $args ) {
 }
 
 ------------------------------------------------------
-Just for testing
