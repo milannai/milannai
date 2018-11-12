@@ -1,0 +1,49 @@
+#Wordpress
+1. Default Wordpress Function ?
+--> 
+get_footer
+get_header
+get_sidebar
+the_title
+wp_title
+get_the_title
+get_permalink
+get_Post
+get_the_ID()
+	
+2. Type of Wordpress Hook with example ?
+3. Wordpress Custom Post Type.
+4. Taxonomy in wordpress.
+5. How many Tables in Wordpress and explain it.
+
+#Corephp
+
+1. Serialize And Unserialize 
+Ans. 
+	http://www.hackingwithphp.com/5/11/0/saving-arrays
+	
+2. Array Function and String Function
+
+3. Unlink and unset function
+4. Type of Php Error
+5. Diffrence between include and Require_once Function
+
+#Mysql
+
+1. Requirment to create Foreign key ?
+Ans. 
+	 http://webdevzoom.com/create-edit-delete-foreign-key-phpmyadmin/
+-->  Make sure the storage engine used by the tables are InnoDB
+-->  Make sure fields in the main and reference tables are used as an index or primary key
+-->  All values in the fields that will be used as FK must exist in the field of reference table.
+	 -For example, we have sales table which has product_id field and we’ll make it as a FK that reference to product_id field in the product table. Suppose the first row in the product_id field of sales table contains a value: 1, the second row: 2 and third row: 3, then field product_id in the product table must contain these values.
+
+2. Indexing in Mysql
+3. Join in mysql
+4. Diffrence Between Drop And Truncate	and delete
+5. Diffrence Between Primary ke and unique key
+6. 3rd highest 9th highest Salary of employee
+7. Diffrence between ionidb and myisam
+8. Aggreagate function
+9. Having Clues
+10. If i forgott to give auto increment to Primary key, Is insert data ?
