@@ -231,3 +231,15 @@ Step-2 : create function.php add code below
 			}
 		?>
 
+14. Add javascript and css in wordpress
+Ans. 
+
+1. Add in function.php 
+--> 
+add_action('wp_enqueue_scripts', 'enqueue_blanchard_style');
+function enqueue_blanchard_style() {
+    wp_enqueue_style('boostrap', get_template_directory_uri() .'/css/bootstrap.min.css');
+    wp_enqueue_style('roboto-font', 'https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700|Roboto:300,400,500,700');
+	
+    wp_enqueue_script('jquery-min-js', get_template_directory_uri() . '/js/jquery-1.12.2.min.js', '', '', true);   
+}
