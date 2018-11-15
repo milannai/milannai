@@ -269,3 +269,50 @@ if (function_exists('acf_add_options_page')) {
     ));
 }
 /* End Of theme option page */
+
+
+16. Add Custom post type in wordpress
+Ans.
+
+--> Add code in function.php file
+****
+
+function vehicle_custom_post_type() {
+    $labels = array(
+        'name' => __('Vehicle'),
+        'singular_name' => __('Vehicle'),
+        'menu_name' => __('Vehicle'),
+        'parent_item_colon' => __('Parent Vehicle'),
+        'all_items' => __('All Vehicle'),
+        'view_item' => __('View Vehicle'),
+        'add_new_item' => __('Add New Vehicle'),
+        'add_new' => __('Add New'),
+        'edit_item' => __('Edit Vehicle'),
+        'update_item' => __('Update Vehicle'),
+        'search_items' => __('Search Vehicle'),
+        'not_found' => __('Not Found'),
+        'not_found_in_trash' => __('Not found in Trash')
+    );
+    $args = array(
+        'label' => __('vehicle'),
+        'description' => __('Best Crunchify Deals'),
+        'labels' => $labels,
+        'supports' => array('title', 'editor', 'excerpt', 'author', 'thumbnail', 'revisions', 'custom-fields'),
+        'public' => true,
+        'hierarchical' => false,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'show_in_nav_menus' => true,
+        'show_in_admin_bar' => true,
+        'has_archive' => true,
+        'can_export' => true,
+        'exclude_from_search' => false,
+        'yarpp_support' => true,
+        //'taxonomies' 	      => array('post_tag'),
+        'publicly_queryable' => true,
+        'capability_type' => 'page'
+    );
+    register_post_type('vehicle', $args);
+}
+add_action('init', 'vehicle_custom_post_type', 0);
+******
