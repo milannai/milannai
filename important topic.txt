@@ -213,3 +213,21 @@ function custom_woocommerce_product_subcategories_args( $args ) {
 }
 
 ------------------------------------------------------
+
+13. Create Child theme in Wordpress
+Ans. 
+
+Step-1 : Create style.css add code below
+		/*
+		Theme Name: Optimizer Child
+		Template: optimizer
+		*/
+
+Step-2 : create function.php add code below
+		<?php
+			add_action( 'wp_enqueue_scripts', 'enqueue_child_theme_styles', PHP_INT_MAX);
+			function enqueue_child_theme_styles() {
+  			wp_enqueue_style( 'parent-style', get_template_directory_uri().'/style.css' );
+			}
+		?>
+
