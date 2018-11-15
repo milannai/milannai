@@ -316,3 +316,40 @@ function vehicle_custom_post_type() {
 }
 add_action('init', 'vehicle_custom_post_type', 0);
 ******
+
+17. Add Custom Taxonomy in Wordpress
+Ans. 
+
+--> Add Code in function.php
+******
+
+//create a custom taxonomy name it "Model" for your posts
+function vehicle_custom_taxonomy() {
+
+    $labels = array(
+        'name' => _x('Model', 'taxonomy general name'),
+        'singular_name' => _x('Model', 'taxonomy singular name'),
+        'search_items' => __('Search Model'),
+        'all_items' => __('All Model'),
+        'parent_item' => __('Parent Model'),
+        'parent_item_colon' => __('Parent Model:'),
+        'edit_item' => __('Edit Model'),
+        'update_item' => __('Update Model'),
+        'add_new_item' => __('Add New Model'),
+        'new_item_name' => __('New Model Name'),
+        'menu_name' => __('Model'),
+    );
+
+    register_taxonomy('model', array('vehicle'), array(
+        'hierarchical' => true,
+        'labels' => $labels,
+        'show_ui' => true,
+        'show_admin_column' => true,
+        'query_var' => true,
+        'rewrite' => array('slug' => 'model'),
+    ));
+}
+
+add_action('init', 'vehicle_custom_taxonomy', 0);
+
+*******
