@@ -243,3 +243,29 @@ function enqueue_blanchard_style() {
 	
     wp_enqueue_script('jquery-min-js', get_template_directory_uri() . '/js/jquery-1.12.2.min.js', '', '', true);   
 }
+
+
+15. Add theme option page Wordpress
+Ans.
+--> Add code in function.php
+/* Include Theme option page */
+if (function_exists('acf_add_options_page')) {
+    acf_add_options_page(array(
+        'page_title' => 'Theme General Settings',
+        'menu_title' => 'Site Options',
+        'menu_slug' => 'theme-general-settings',
+        'capability' => 'edit_posts',
+        'redirect' => false
+    ));
+    acf_add_options_sub_page(array(
+        'page_title' => 'Theme Header Settings',
+        'menu_title' => 'Header',
+        'parent_slug' => 'theme-general-settings',
+    ));
+    acf_add_options_sub_page(array(
+        'page_title' => 'Theme Footer Settings',
+        'menu_title' => 'Footer',
+        'parent_slug' => 'theme-general-settings',
+    ));
+}
+/* End Of theme option page */
