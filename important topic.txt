@@ -353,3 +353,47 @@ function vehicle_custom_taxonomy() {
 add_action('init', 'vehicle_custom_taxonomy', 0);
 
 *******
+
+
+18. Add Short code in Wordpress
+Ans. 
+
+--> Add code in function.php
+******
+
+// "new" shortcode
+<?php
+function shortcode_new() {
+    ?>
+    <div>
+        <?php
+        $newsargs = array(
+            'post_type' => 'vehicle',
+            'posts_per_page' => -1,
+            'tax_query' => array(
+                array(
+                    'taxonomy' => 'type',
+                    'field' => 'slug',
+                    'terms' => 'new',
+                )
+            ),
+        );
+        $query = new WP_Query($newsargs);
+        while ($query->have_posts()) : $query->the_post();
+            $news_title = get_the_title();
+            $news_content = get_the_content();
+            ?>
+            <div>
+                <h1><?php the_title(); ?></h1>
+                <h2 class="append"><?php echo $news_content; ?></h2>
+
+            </div>
+            <?php
+        endwhile;
+        wp_reset_query();
+        ?>  
+    </div>
+    <?php
+}
+add_shortcode('new', 'shortcode_new');
+?>
