@@ -397,3 +397,13 @@ function shortcode_new() {
 }
 add_shortcode('new', 'shortcode_new');
 ?>
+
+19. Curl Code php
+Ans.
+--> 
+	$curl_handle = curl_init();
+	curl_setopt($curl_handle, CURLOPT_URL, 'http://php.net/manual/en/curl.examples-basic.php');
+	curl_setopt($curl_handle, CURLOPT_CONNECTTIMEOUT, 2);
+	curl_setopt($curl_handle, CURLOPT_RETURNTRANSFER, 1);
+	$buffer = curl_exec($curl_handle);
+	curl_close($curl_handle);
