@@ -412,6 +412,7 @@ Ans.
 20. Scroll Up Down for All Browswe Support Javascript
 Ans.
 -->
+Method : 1 [Only Mouse Scroll]
 function detectMouseWheelDirection( e )
 {
     var delta = null,
@@ -450,4 +451,29 @@ if ( window.addEventListener ) {
         handleMouseWheelDirection( detectMouseWheelDirection( e ) );
     });
 }
+
+Method : 2 [Mouse scroll and keybord scroll cross browser working]
+
+// Initial state
+var scrollPos = 0;
+// adding scroll event
+window.addEventListener('scroll', function(){
+	var height = jQuery(window).scrollTop();
+  // detects new state and compares it with the new one
+  if(height > 150 ){
+  	if ((document.body.getBoundingClientRect()).top > scrollPos)
+  	{
+  		jQuery('.header,.bottombar').removeClass('sticky_head_down');
+  		jQuery('.header,.bottombar').addClass('sticky_head_up');
+
+  	}
+  	else{
+  		jQuery('.header,.bottombar').removeClass('sticky_head_up');
+  		jQuery('.header,.bottombar').addClass('sticky_head_down');
+  	}
+  }
+	// saves the new position for iteration.
+	scrollPos = (document.body.getBoundingClientRect()).top;
+});
+
 ----------
