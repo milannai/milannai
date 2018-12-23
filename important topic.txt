@@ -273,6 +273,7 @@ if (function_exists('acf_add_options_page')) {
 
 16. Add Custom post type in wordpress
 Ans.
+--> Costum post type Complete guide : https://www.smashingmagazine.com/2012/11/complete-guide-custom-post-types/
 
 --> Add code in function.php file
 ****
