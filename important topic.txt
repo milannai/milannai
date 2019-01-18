@@ -498,3 +498,16 @@ function query_post_type($query) {
 22. Get Upcoming Birthday user from database query ?
 Ans.
 $sql = "SELECT * FROM  rem_birthday WHERE  DATE_ADD(birthdate, INTERVAL YEAR(CURDATE())-YEAR(birthdate) + IF(DAYOFYEAR(CURDATE()) >= DAYOFYEAR(birthdate),1,0)YEAR) BETWEEN CURDATE() AND DATE_ADD(CURDATE(), INTERVAL 1 DAY); ";
+
+23. Multiple Select Box html and jquery
+Ans. 
+<select name="projecttbl_Xfield" id="projecttbl_Xfield" multiple="multiple" class="form-control"> 
+<option value="Abc">Abc</option>
+</select>
+
+Jquery : 
+ $.each($("select[name='projecttbl_Xfield'] option:selected"), function(){            
+            xaxis.push($(this).val());
+        }); 
+24. 	
+
