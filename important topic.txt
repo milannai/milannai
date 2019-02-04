@@ -509,5 +509,18 @@ Jquery :
  $.each($("select[name='projecttbl_Xfield'] option:selected"), function(){            
             xaxis.push($(this).val());
         }); 
-24. 	
+
+24. Codeigniter Session Set and unset 
+Ans. 
+--> Session Set : 	$newdata = array(
+               		'username'  => 'johndoe',
+               		'email'     => 'johndoe@some-site.com',
+               		'logged_in' => TRUE
+           		);
+		$this->session->set_userdata("addProject", $newdata);
+		$this->session->userdata('addProject')['username']; // Single Element
+
+--> Display all Session : $this->session->userdata
+--> unset Session : $this->session->unset_userdata('addProject');
+
 
