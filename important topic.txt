@@ -523,4 +523,6 @@ Ans.
 --> Display all Session : $this->session->userdata
 --> unset Session : $this->session->unset_userdata('addProject');
 
+25. Add Top Side Pagination in DataTable
+Ans. Add...   "sDom": '<lfptip>'   .... in Datatable js.  
 
